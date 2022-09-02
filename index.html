@@ -20,8 +20,8 @@
             <div class="flex-none gap-2">
                 <div>
                     <ul class="menu menu-horizontal p-0">
-                      <li class="font-medium border-b-2 border-indigo-600 hover:text-indigo-700"><a href="index.html">News</a></li>
-                      <li class="font-medium hover:text-indigo-700"><a href="blog.html">Blog</a></li>
+                      <li class="font-medium  text-indigo-700 border-b-2 border-indigo-600"><a href="index.html">News</a></li>
+                      <li class=""><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
                 <div class="dropdown dropdown-end">
@@ -33,8 +33,34 @@
                 </div>
             </div>
           </div>
+          <div class=" divider divide-slate-400"> </div>
     </header>
 
+    <main class="container mx-auto">
+         <!-- category title  -->
+        <div class="my-5">
+            <ul id="all-categories" class="flex flex-col justify-between items-center py-4 md:flex-row text-slate-600">
+                <!-- <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+                <li><a>Item 3</a></li> -->
+            </ul>
+        </div>
+
+        <!-- news  -->
+        <div id="no-news-found" class="hidden">
+            <h2  class="text-center text-red-700 text-2xl">No News Available for This Category</h2>
+        </div>
+
+        <div id="news-container" class="grid grid-cols-1 gap-5">
+
+           
+        </div>
+
+
+    </main>
+
     
+
+<script src="js/app.js"></script>
 </body>
 </html>
