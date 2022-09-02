@@ -67,8 +67,12 @@ const displayNews = data =>{
                     <div> 
                     <p> <i class="fa-regular fa-eye"></i> ${news.total_view} </p>
                     </div>
+                    <div> 
+                    <p> <i class="fa-solid fa-star"></i> ${news.rating.number} </p>
+                    </div>
                     
-                    <button class="btn btn-primary">Listen</button>
+                    
+                    <button class=""><i class="text-2xl text-indigo-700 fa-solid fa-arrow-right-long"></i></button>
                 </div>
             </div>
         </div>
