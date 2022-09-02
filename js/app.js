@@ -55,14 +55,17 @@ const displayNews = data =>{
             <div class="card-body">
                 <h2 class="card-title">${news.title? news.title : 'No Information Found'}</h2>
                 <p>${news.details.length > 200 ? news.details.slice(0,200) + '...' : news.details }</p>
-                <div class="card-actions justify-between mt-3">
+                <div class="card-actions justify-between mt-3 items-center">
                     <div class="flex items-center"> 
                         <img class="h-10 w-10 rounded-full" src="${news.author.img}">
-                        <div class="mx-2" text-sm> 
-                        <h5 class=""> ${news.author.name? news.author.name : 'No Information Found'} </h5>
-                        <h5 class=""> ${news.author.published_date? news.author.published_date : 'No Information Found'} </h5>
+                        <div class="mx-2"> 
+                            <h5 class=""> ${news.author.name? news.author.name : 'No Information Found'} </h5>
+                            <h5 class="text-sm text-gray-400"> ${news.author.published_date? news.author.published_date : 'No Information Found'} </h5>
 
                         </div>
+                    </div>
+                    <div> 
+                    <p> <i class="fa-regular fa-eye"></i> ${news.total_view} </p>
                     </div>
                     
                     <button class="btn btn-primary">Listen</button>
