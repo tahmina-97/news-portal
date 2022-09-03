@@ -37,6 +37,7 @@ const loadCategoryNews =  async(categoryId) =>{
 }
 
 const displayNews = async(data) =>{
+    console.log(data);
     const categoryData = await loadAllNews();
     const notFoundMsg = document.getElementById('no-news-found');
     const newsFound = document.getElementById('news-found');
@@ -74,7 +75,7 @@ const displayNews = async(data) =>{
                     <p> <i class="fa-solid fa-star"></i> ${news.rating.number} </p>
                     </div>
                     
-                    <label for="my-modal-6" class="btn border-none bg-transparent hover:bg-indigo-200 modal-button">
+                    <label onclick="loadNewsDetails('${news._id}')" for="my-modal-6" class="btn border-none bg-transparent hover:bg-indigo-200 modal-button">
                     <i class="text-2xl text-indigo-700 fa-solid fa-arrow-right-long"></i>
                     </label>
                 </div>
@@ -85,6 +86,36 @@ const displayNews = async(data) =>{
 
     }
 
+}
+
+const loadNewsDetails = async(newsId)=>{
+    try{
+        const url =`https://openapi.programming-hero.com/api/news/${newsId}`
+        const res = await fetch(url);
+        const data = await res.json();
+        displayNewsDetails(data.data[0]);
+        // console.log(data.data[0]);
+    }
+
+    catch(error){
+        console.log(error);
+    }
+}
+
+const displayNewsDetails = async(news)=>{
+    console.log(news);
+    const modalBody= document.getElementById('modal-body');
+    modalBody.innerHTML=`
+        <h3 class="font-bold text-lg pb-4">${news.title? news.title : 'No Title Found'}</h3>
+        <img src="${news.image_url}"/>
+        <p class="py-4">${news.details? news.details: 'No Information Found'}</p>
+        
+        <div class="flex justify-around items-center modal-action">
+        <p class="font-semibold">${news.total_view? news.total_view : 'No Information Found'} views </p>
+        <p class="text-red-800 font-bold"> ${news.others_info?.is_trending? 'Trending' : ''}  </p>
+        <label for="my-modal-6" class="btn">Close</label>
+        </div>
+    `
 }
 
 
