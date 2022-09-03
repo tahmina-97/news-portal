@@ -13,25 +13,27 @@ const loadAllNews = async() => {
 const setNewsCategory = async() =>{
     const data = await loadAllNews();
     const ul = document.getElementById('all-categories');
+    // console.log(data);
 
     data.forEach(category => {
         
         const li = document.createElement('li');
-        li.innerHTML = `<button onclick="loadCategoryNews('${category.category_id}')" >${category.category_name}</button>`;
+        li.innerHTML = `<button 
+        onclick="loadCategoryNews('${category.category_id}', '${category.category_name}')" >${category.category_name}</button>`;
         li.classList.add('my-3');
         ul.appendChild(li);
         
     });
 }
 
-const loadCategoryNews =  async(categoryId) =>{
+const loadCategoryNews =  async(categoryId, categoryName) =>{
     toggleSpinner(true);
 
     try{
         const url= `https://openapi.programming-hero.com/api/news/category/${categoryId}`
         const res = await fetch(url);
         const data = await res.json();
-        displayNews(data.data);
+        displayNews(data.data, categoryName);
     }
     catch(error){
         alert(error);
@@ -39,11 +41,11 @@ const loadCategoryNews =  async(categoryId) =>{
     
 }
 
-const displayNews = async(data) =>{
-    // const categoryData = await loadAllNews();
+const displayNews = async(data, categoryName) =>{
+    
     const notFoundMsg = document.getElementById('no-news-found');
     const newsFound = document.getElementById('news-found');
-    newsFound.innerHTML=`${data.length} items found for category`;
+    newsFound.innerHTML=`${data.length} items found for category ${categoryName}`;
     if(data.length === 0){
         notFoundMsg.classList.remove('hidden');
     }
@@ -145,6 +147,6 @@ const toggleSpinner = isLoading => {
 }
 
 
-loadCategoryNews('01');
+loadCategoryNews('01', 'Breaking News');
 
 setNewsCategory();
