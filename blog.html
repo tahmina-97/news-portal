@@ -40,40 +40,47 @@
     </header>
 
     <main class="container mx-auto">
-        <section class="grid grid-cols-1 gap-5">
+        <h1 class="text-center text-3xl font-semibold mt-5 mb-8">Frequently Asked Questions about ES6</h1>
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            
             <article>
-                <!-- <h2>What is the difference of var, let and const?</h2> -->
-                <div class="card w-3/4 mx-auto md:w-full bg-primary text-primary-content">
+                <div class="card w-3/4 mx-auto lg:w-full lg:h-96 bg-primary text-primary-content">
                     <div class="card-body">
                       <h2 class="card-title">What is the difference of var, let and const?</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <p class="my-4">The scope of a var variable is functional scope. It can be updated and re-declared into the scope. It can be declared without initialization. It can be accessed without initialization as its default value is “undefined”. <br>
+                    The scope of a let variable is block scope. It can be updated but cannot be re-declared into the scope. It can be declared without initialization. It cannot be accessed without initialization otherwise it will give 'referenceError'. <br>
+                    The scope of a const variable is block scope. It cannot be updated or re-declared into the scope. It cannot be declared without initialization. It cannot be accessed without initialization, as it cannot be declared without initialization.
+                     </p>
                     </div>
                   </div>
             </article>
             <article>
-                <!-- <h2>What is the difference of var, let and const?</h2> -->
-                <div class="card w-3/4 mx-auto md:w-full bg-primary text-primary-content">
+                <div class="card w-3/4 mx-auto lg:w-full lg:h-96 bg-primary text-primary-content">
                     <div class="card-body">
                       <h2 class="card-title">What is the difference of regular function and arrow function?</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <p class="my-4">Regular functions created using function declarations or expressions are constructible and callable. Since regular functions are constructible, they can be called using the new keyword. However, the arrow functions are only callable and not constructible, i.e arrow functions can never be used as constructor functions. <br>
+                        In regular function, this changes according to the way that function is invoked. Arrow functions don't have their own “this”, and they don't redefine the value of “this ”within the function. In regular JavaScript functions, arguments keywords can be used to access the passed arguments when the function is invoked. But, arrow functions do not have their own arguments and it uses the arguments from the outer function. 
+                    </p>
                     </div>
                   </div>
             </article>
             <article>
-                <!-- <h2>What is the difference of var, let and const?</h2> -->
-                <div class="card w-3/4 mx-auto md:w-full bg-primary text-primary-content">
+                <div class="card w-3/4 mx-auto lg:w-full lg:h-96 bg-primary text-primary-content">
                     <div class="card-body">
-                      <h2 class="card-title">What is the difference of map(), forEach(), filter() and find()?</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <h2 class="card-title">What is the difference of .map(), .forEach(), .filter() and .find()?</h2>
+                      <p class="my-4">.map() executes the same code on every element in an array and returns a new array with the updated elements. <br>
+                    .forEach(), is used to execute the same code on every element in an array but does not change the array and it returns undefined. <br>
+                    .filter() checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria. <br>
+                    .find() method returns the value of the first element that passes a test. The method executes a function for each array element. This returns undefined if no elements are found.
+                    </p>
                     </div>
                   </div>
             </article>
             <article>
-                <!-- <h2>What is the difference of var, let and const?</h2> -->
-                <div class="card w-3/4 mx-auto md:w-full bg-primary text-primary-content">
+                <div class="card w-3/4 mx-auto lg:w-full lg:h-96 bg-primary text-primary-content">
                     <div class="card-body">
                       <h2 class="card-title">Why we use Template Strings/Template Literals?</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <p class="my-4">Template Literals use back-ticks (``) rather than the quotes ("") to define a string. With template literals, you can use both single and double quotes inside a string. Template literals allows multiline strings. Template literals provide an easy way to interpolate variables and expressions into strings. The method is called string interpolation. Template literals allow variables and expressions in strings</p>
                     </div>
                   </div>
             </article>
