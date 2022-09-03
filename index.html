@@ -61,16 +61,20 @@
             </div>
         </section>
 
-        <section class="flex items-center">
-            <h3 class="px-3 font-medium">Sort By View:</h3>
-            <div class="dropdown dropdown-hover">
-                <label tabindex="0" class="btn bg-transparent text-gray-500 m-1 hover:bg-transparent">Default <i class="fa-solid fa-angle-down"></i></label>
-                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                  <li onclick="maxView()" ><a>By most views</a></li>
-                  <li onclick="minView()"><a>By least views</a></li>
-                </ul>
+        <section class=" flex flex-col md:flex-row items-center justify-between">
+            <div class="flex flex-col md:flex-row items-center">
+                <h3 class="px-3 font-medium">Sort By View:</h3>
+                <div class="dropdown dropdown-hover">
+                    <label tabindex="0" class="btn bg-transparent text-gray-500 m-1 hover:bg-transparent">Default <i class="fa-solid fa-angle-down"></i></label>
+                    <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                    <li onclick="maxView()" ><a>By most views</a></li>
+                    <li onclick="minView()"><a>By least views</a></li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="ml-auto pr-3">
+            
+            <div class="pr-3">
                 <button class="btn btn-active btn-primary">Today's Pick</button>
                 <button class="btn btn-active btn-primary">Trending</button>
             </div>
