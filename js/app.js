@@ -71,7 +71,7 @@ const displayNews = async(data) =>{
             const div = document.createElement('div');
             div.innerHTML = `
             <div class="card lg:card-side bg-base-100 shadow-xl rounded-none p-4">
-                <figure><img class="w-64 h-full rounded-md" src="${news.thumbnail_url}" alt="Album"></figure>
+                <figure><img class="w-full md:w-80 lg:w-64 h-80 md:h-96 lg:h-full rounded-md" src="${news.thumbnail_url}" alt="Album"></figure>
                 <div class="card-body">
                     <h2 class="card-title">${news.title? news.title : 'No Information Found'}</h2>
                     <p>${news.details.length > 280 ? news.details.slice(0,280) + '...' : news.details }</p>
