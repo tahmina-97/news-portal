@@ -39,26 +39,49 @@
     </header>
 
     <main class="container mx-auto">
-         <!-- category title  -->
-        <div class="my-5">
-            <ul id="all-categories" class="flex flex-col justify-between items-center py-4 md:flex-row text-slate-600">
+         <!--show news category titles  -->
+        <section class="my-5 p-4 shadow-md">
+            <ul id="all-categories" class="flex flex-col justify-between items-center md:flex-row text-slate-600">
                 <!-- <li><a>Item 1</a></li>
                 <li><a>Item 2</a></li>
                 <li><a>Item 3</a></li> -->
             </ul>
-        </div>
+        </section>
 
-        <!-- news  -->
-        <div id="no-news-found" class="hidden">
+        <section class="my-5 p-5 shadow-md">
+            <div>
+                <h3 id="news-found"></h3>
+            </div>
+        </section>
+
+        <!-- no found msg  -->
+        <section id="no-news-found" class="hidden">
             <h2  class="text-center text-red-700 text-2xl">No News Available for This Category</h2>
-        </div>
+        </section>
 
-        <div id="news-container" class="grid grid-cols-1 gap-5">
-
+        <!--show all news  -->
+        <section id="news-container" class="grid grid-cols-1 gap-5">
            
+        </section>
+
+        <!-- modal  -->
+
+        <!-- Put this part before </body> tag -->
+        <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+        <div class="modal modal-bottom sm:modal-middle">
+
+        <div id="modal-body" class="modal-box">
+            <h3 class="font-bold text-lg">Congratulations random Internet user!</h3>
+            <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+            <div class="modal-action">
+            <label for="my-modal-6" class="btn">Close</label>
+            </div>
+        </div>
         </div>
 
 
+
+        
     </main>
 
     

@@ -17,6 +17,7 @@ const setNewsCategory = async() =>{
     data.forEach(category => {
         const li = document.createElement('li');
         li.innerHTML = `<button onclick="loadCategoryNews('${category.category_id}')" >${category.category_name}</button>`;
+        li.classList.add('my-3');
         ul.appendChild(li);
         
     });
@@ -27,7 +28,6 @@ const loadCategoryNews =  async(categoryId) =>{
         const url= `https://openapi.programming-hero.com/api/news/category/${categoryId}`
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data.data);
         displayNews(data.data);
     }
     catch(error){
@@ -36,8 +36,11 @@ const loadCategoryNews =  async(categoryId) =>{
     
 }
 
-const displayNews = data =>{
+const displayNews = async(data) =>{
+    const categoryData = await loadAllNews();
     const notFoundMsg = document.getElementById('no-news-found');
+    const newsFound = document.getElementById('news-found');
+    newsFound.innerHTML=`${data.length} items found for category`;
     if(data.length === 0){
         notFoundMsg.classList.remove('hidden');
     }
@@ -51,7 +54,7 @@ const displayNews = data =>{
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card lg:card-side bg-base-100 shadow-xl rounded-none p-4">
-            <figure><img class="w-64 h-full rounded-md" src="${news.image_url}" alt="Album"></figure>
+            <figure><img class="w-64 h-full rounded-md" src="${news.thumbnail_url}" alt="Album"></figure>
             <div class="card-body">
                 <h2 class="card-title">${news.title? news.title : 'No Information Found'}</h2>
                 <p>${news.details.length > 200 ? news.details.slice(0,200) + '...' : news.details }</p>
@@ -71,8 +74,9 @@ const displayNews = data =>{
                     <p> <i class="fa-solid fa-star"></i> ${news.rating.number} </p>
                     </div>
                     
-                    
-                    <button class=""><i class="text-2xl text-indigo-700 fa-solid fa-arrow-right-long"></i></button>
+                    <label for="my-modal-6" class="btn border-none bg-transparent hover:bg-indigo-200 modal-button">
+                    <i class="text-2xl text-indigo-700 fa-solid fa-arrow-right-long"></i>
+                    </label>
                 </div>
             </div>
         </div>
@@ -82,6 +86,8 @@ const displayNews = data =>{
     }
 
 }
+
+
 
 loadCategoryNews('01');
 
