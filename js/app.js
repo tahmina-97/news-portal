@@ -109,7 +109,7 @@ const displayNewsDetails = async(news)=>{
         <h3 class="font-bold text-lg pb-4">${news.title? news.title : 'No Title Found'}</h3>
         <img src="${news.image_url}"/>
         <p class="py-4">${news.details? news.details: 'No Information Found'}</p>
-        
+        <h4> <span class="font-semibold"> Published on: </span>  ${news.author?.published_date? news.author.published_date : 'No Info Found'} </h4>
         <div class="flex justify-around items-center modal-action">
         <p class="font-semibold">${news.total_view? news.total_view : 'No Information Found'} views </p>
         <p class="text-red-800 font-bold"> ${news.others_info?.is_trending? 'Trending' : ''}  </p>
