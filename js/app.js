@@ -6,7 +6,7 @@ const loadAllNews = async() => {
     }
 
     catch(error){
-        console.log(error);
+        alert(error);
     }
 }
 
@@ -34,7 +34,7 @@ const loadCategoryNews =  async(categoryId) =>{
         displayNews(data.data);
     }
     catch(error){
-        console.log(error);
+        alert(error);
     }
     
 }
@@ -63,7 +63,7 @@ const displayNews = async(data) =>{
     //     return data;
     // }
 
-    
+    // sort news by descending order of views
     data.sort((a,b) => b.total_view - a.total_view);
 
     for(const news of data){
@@ -84,7 +84,7 @@ const displayNews = async(data) =>{
                             </div>
                         </div>
                         <div> 
-                        <p> <i class="fa-regular fa-eye"></i> ${news.total_view? news.total_view : 'No Info Found' } </p>
+                        <p> <i class="fa-regular fa-eye"></i> ${news.total_view === null ? 'No Info Found' : news.total_view } </p>
                         </div>
                         <div> 
                         <p> <i class="fa-solid fa-star"></i> ${news.rating?.number? news.rating?.number :  'No Info Found' } </p>
@@ -114,7 +114,7 @@ const loadNewsDetails = async(newsId)=>{
     }
 
     catch(error){
-        console.log(error);
+        alert(error);
     }
 }
 
