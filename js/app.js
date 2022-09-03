@@ -63,8 +63,7 @@ const displayNews = async(data) =>{
     //     return data;
     // }
 
-
-
+    
     data.sort((a,b) => b.total_view - a.total_view);
 
     for(const news of data){
